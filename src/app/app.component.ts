@@ -15,11 +15,15 @@ export class AppComponent implements OnInit{
   totalGames: number;
   constructor(private gameInfoService: GameInfoService){}
 
+  getDetails($event: any){
+  }
+
   ngOnInit(){
     this.gameInfoService.getGamesList().subscribe(res => {
       this.totalGames = res.count;
       this.games = res.results;
       this.gameOne = this.games[0];
     });
+
   }
 }

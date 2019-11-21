@@ -9,17 +9,14 @@ import { Game } from "../models/game";
   providedIn: "root"
 })
 export class GameInfoService {
-  apiKey: string = environment.rawg_api_key;
-  baseUrl: string = environment.rawg_api_url;
+  rawg_url: string = environment.rawg_url;
   constructor(private http: HttpClient) {}
 
   getGamesList(page?: number): Observable<any> {
-    let apiHeaders: HttpHeaders = new HttpHeaders({
-      "x-rapidapi-key": this.apiKey
-    });
-    const requestOptions = {
-      headers: apiHeaders
-    };
-    return page ? this.http.get(this.baseUrl + "games?page=" + page, requestOptions) : this.http.get(this.baseUrl + "games?page=1", requestOptions);
+    return this.http.get(this.rawg_url + "games");
+  }
+
+  getGameDetails(id: number): Observable<any>{
+    return this.http.get(this.rawg_url + "games/"+id);
   }
 }

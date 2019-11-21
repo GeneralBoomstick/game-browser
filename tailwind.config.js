@@ -9,6 +9,11 @@ module.exports = {
       }
     }
   },
-  variants: {},
+  variants: {
+    textTransform: ['responsive', 'hover'],
+    letterSpacing: ['responsive', 'hover'],
+    fontSize: ['responsive', 'hover'],
+    padding: ['responsive', 'hover'],
+  },
   plugins: []
 }

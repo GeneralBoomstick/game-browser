@@ -1,4 +1,7 @@
-<div class="bg-alt rounded-lg overflow-hidden pb-0 m-8 max-w-sm">
+<div
+  (click)="getDetails()"
+  class="bg-alt rounded-lg overflow-hidden pb-0 m-8 max-w-sm"
+>
   <img
     [defaultImage]="defaultImage"
     [lazyLoad]="game.background_image"
@@ -32,7 +35,7 @@
     <div class="flex flex-wrap items-end justify-start">
       <span
         *ngFor="let genre of game.genres"
-        class="bg-gray-500 rounded-full px-2 py-1 mr-1 mt-1 text-alt lowercase font-medium text-xs tracking-wider"
+        class="bg-gray-500 rounded-full px-2 py-1 mr-1 mt-1 text-alt capitalize font-medium text-xs tracking-wider hover:bg-alpha"
       >
         {{ genre.name }}
       </span>

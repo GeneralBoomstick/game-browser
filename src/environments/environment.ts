@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  rawg_api_url: 'https://rawg-video-games-database.p.rapidapi.com/',
-  rawg_api_key: '954f5c4b5cmsha2aa81d4e7317a6p1dd958jsn4e29839d5b35'
+  rawg_rapidapi_url: 'https://rawg-video-games-database.p.rapidapi.com/',
+  rawg_rapidapi_key: '954f5c4b5cmsha2aa81d4e7317a6p1dd958jsn4e29839d5b35',
+  rawg_url: 'https://api.rawg.io/api/'
 };
 
 /*
