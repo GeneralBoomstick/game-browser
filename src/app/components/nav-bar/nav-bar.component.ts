@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'nav-bar',
@@ -6,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  showLinks: boolean;
+  showSearch: boolean;
+  faSearch = faSearch;
   constructor() { }
 
   openDrawer() {
-    this.showLinks = !this.showLinks;
+    this.showSearch = !this.showSearch;
   }
 
   ngOnInit() {
     if(window.screen.width >= 640){
-      this.showLinks = true;
+      this.showSearch = true;
     } else {
-      this.showLinks = false;
+      this.showSearch = false;
     }
   }
 

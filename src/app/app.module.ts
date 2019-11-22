@@ -6,6 +6,8 @@ import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { HttpClientModule } from "@angular/common/http";
 import { GameCardComponent } from "./components/game-card/game-card.component";
 import { LazyLoadImageModule } from "ng-lazyload-image";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { LazyLoadImageModule } from "ng-lazyload-image";
     NavBarComponent,
     GameCardComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, LazyLoadImageModule],
+  imports: [BrowserModule, HttpClientModule, LazyLoadImageModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent]
 })

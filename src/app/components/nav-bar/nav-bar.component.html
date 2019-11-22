@@ -1,22 +1,26 @@
-<header class="bg-primary sm:flex sm:justify-between sm:px-4 sm:py-3 fixed w-full">
-    <div class="flex justify-between px-4 py-3 sm:p-0">
+<header class="sm:px-4 sm:py-3 w-full">
+    <div class="flex justify-between items-center px-4 py-3 sm:p-0">
         <div class="flex">
             <img class="h-8" src="../../assets/controller.png" alt="video game controller">
             <h1 class="text-alt mx-1 font-semibold text-lg">Game Browser</h1>
         </div>
         <!--Link Buttons-->
-        <!-- <div class="sm:hidden"> 
+        <div class="sm:hidden"> 
             <button (click)="openDrawer()"class="p-1 text-alt focus:outline-none" type="button">
                 <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
                     <path *ngIf="!showLinks" fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
                     <path *ngIf="showLinks" fill-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
                 </svg>
             </button>
-        </div> -->
+        </div>
+        <div class="flex hidden sm:inline-block">
+            <fa-icon [icon]="faSearch" class="text-alt mr-1" (click)="showSearchs"></fa-icon>
+            <input class="rounded border shadow appearance-none px-1" type="text" placeholder="Search" id="game-search"/>
+        </div>
     </div>
     <!--links-->
-    <!-- <div *ngIf="showLinks" class="px-3 pt-1 pb-2 sm:flex"> 
-        <a class="block text-alt font-semibold hover:bg-gray-600 rounded px-1 sm:mt-0 sm:ml-2 " href="#">Favorites</a>
-        <a class="block text-alt font-semibold hover:bg-gray-600 rounded px-1 sm:mt-0 sm:ml-2 mt-1" href="#">Movie Browser</a>
-    </div> -->
+    <div *ngIf="showSearch" class="px-4">
+        <fa-icon [icon]="faSearch" class="text-alt mr-1" (click)="searchGame"></fa-icon>
+        <input class="rounded border shadow appearance-none px-1" type="text" placeholder="Search" id="game-search"/>
+    </div>
 </header>

@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-between">
     <nav-bar></nav-bar>
-    <div *ngIf="games" class="flex flex-wrap justify-center items-center my-16">
+    <div *ngIf="games" class="flex flex-wrap justify-center items-center my-4">
         <game-card *ngFor="let game of games" [game]="game" (moreInfo)="getDetails($event)"></game-card>
     </div>
 </div>
