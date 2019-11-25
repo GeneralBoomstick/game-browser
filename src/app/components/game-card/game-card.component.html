@@ -2,9 +2,6 @@
   <img [defaultImage]="defaultImage" [lazyLoad]="game.background_image" alt="game image"
     class="h-64 w-full object-center object-cover" />
   <div class="px-2 py-1">
-    <div class="flex flex-wrap items-end">
-            <p *ngFor="let genre of game.genres" class="bg-gray-500 rounded-full px-2 py-1 mr-1 text-alt lowercase font-medium text-xs tracking-wider">{{genre.name}}</p>
-        </div>
     <h4 class="font-semibold text-lg">{{ game.name }}</h4>
     <div class="flex flex-wrap justify-between">
       <span class="flex mr-1">
