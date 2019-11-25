@@ -1,26 +1,36 @@
-// export class Game {
-//   id: number;
-//   slug: string;
-//   name: string;
-//   background_image: string;
-//   screenShots: string[];
+import { Genre } from "./genre";
+import { Platform } from "./platform";
 
-//   constructor(
-//     id: number,
-//     name: string,
-//     background_image: string,
-//     slug: string
-//   ) {
-//     this.id = id;
-//     this.name = name;
-//     this.background_image = background_image;
-//     this.screenShots = [];
-//     this.slug = slug;
-//   }
+export class Game {
+  id: number;
+  slug: string;
+  name: string;
+  backgroundImage: string;
+  rating: number;
+  metacritic: number;
+  parentPlatforms: Platform[];
+  genres: Genre[];
+  screenshots: string[];
 
-//   addScreenshot(screenShot: string) {
-//     this.screenShots.push(screenShot);
-//   }
-// }
-
-export interface Game{}
+  constructor(
+    id: number,
+    slug: string,
+    name: string,
+    backgroundImage: string,
+    rating: number,
+    metacritic: number,
+    parentPlatforms: Platform[],
+    genres: Genre[],
+    screenshots: string[]
+  ) {
+    this.id = id;
+    this.slug = slug;
+    this.name = name;
+    this.backgroundImage = backgroundImage;
+    this.rating = rating;
+    this.metacritic = metacritic;
+    this.parentPlatforms = parentPlatforms;
+    this.genres = genres;
+    this.screenshots = screenshots;
+  }
+}

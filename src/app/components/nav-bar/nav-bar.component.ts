@@ -16,13 +16,7 @@ export class NavBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(window.screen.width >= 640){
-      this.showSearch = false;
-    } else {
-      this.showSearch = true;
-    }
-
-    console.log('showSearch: ', this.showSearch);
+    this.showSearch = false;
   }
 
 }

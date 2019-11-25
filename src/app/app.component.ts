@@ -20,9 +20,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     this.gameInfoService.getGamesList().subscribe(res => {
-      this.totalGames = res.count;
-      this.games = res.results;
-      this.gameOne = this.games[0];
+      this.games = res;
+      console.log(this.games);
     });
 
   }
