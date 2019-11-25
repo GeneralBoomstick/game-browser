@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 import { Game } from "../models/game";
 import { Genre } from "../models/genre";
@@ -14,8 +14,9 @@ export class GameInfoService {
   rawg_url: string = environment.rawg_url;
   constructor(private http: HttpClient) {}
 
-  getGamesList(page?: number): Observable<Game[]> {
-    return this.http.get(this.rawg_url + "games").pipe(
+  getGamesList(resultCount?: number): Observable<Game[]> {
+    const params: HttpParams = new HttpParams().set('page_size', resultCount ? ''+resultCount : '5');
+    return this.http.get(this.rawg_url + "games", {params}).pipe(
       map(res => {
         if (Array.isArray(res['results'])) {
           return res['results'].map(item => {

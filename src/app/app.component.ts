@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GameInfoService } from './services/game-info.service';
 import { Game } from './models/game';
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
+
 
 @Component({
   selector: 'app',
@@ -13,6 +15,8 @@ export class AppComponent implements OnInit{
   pageNumber: number;
   numDisplayed: number;
   totalGames: number;
+  faSearch = faSearch;
+
   constructor(private gameInfoService: GameInfoService){}
 
   getDetails($event: any){
