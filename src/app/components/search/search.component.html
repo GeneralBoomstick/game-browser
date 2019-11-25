@@ -1,0 +1,9 @@
+<div class=" flex justify-center items-center my-4">
+    <fa-icon [icon]="faSearch" class="text-alt px-2 py-1"></fa-icon>
+    <input class="appearance-none px-1 py-1 w-full md:w-1/2 rounded" type="text" placeholder="Search" id="game-search" />
+    <div class=" text-alt px-2 py-1" (click)="showFilterOptions()">
+        <span class="mr-2">Filter</span>
+        <fa-icon *ngIf="!showOptions" [icon]="faChevronDown"></fa-icon>
+        <fa-icon *ngIf="showOptions" [icon]="faChevronUp"></fa-icon>
+    </div>
+</div>

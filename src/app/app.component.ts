@@ -1,32 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { GameInfoService } from './services/game-info.service';
-import { Game } from './models/game';
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
-
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
-export class AppComponent implements OnInit{
-  games: Game[];
-  gameOne: Game;
-  pageNumber: number;
-  numDisplayed: number;
-  totalGames: number;
-  faSearch = faSearch;
+export class AppComponent implements OnInit {
 
-  constructor(private gameInfoService: GameInfoService){}
+  constructor() { }
 
-  getDetails($event: any){
-  }
-
-  ngOnInit(){
-    this.gameInfoService.getGamesList().subscribe(res => {
-      this.games = res;
-      console.log(this.games);
-    });
-
+  ngOnInit() {
+   
   }
 }

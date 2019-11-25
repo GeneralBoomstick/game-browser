@@ -1,0 +1,6 @@
+<div class="flex flex-col justify-center">
+    <search></search>
+    <div *ngIf="games" class="flex flex-wrap justify-center items-center">
+        <game-card *ngFor="let game of games" [game]="game" (moreInfo)="getDetails($event)"></game-card>
+    </div>
+</div>

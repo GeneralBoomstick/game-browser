@@ -14,9 +14,8 @@ export class GameInfoService {
   rawg_url: string = environment.rawg_url;
   constructor(private http: HttpClient) {}
 
-  getGamesList(resultCount?: number): Observable<Game[]> {
-    const params: HttpParams = new HttpParams().set('page_size', resultCount ? ''+resultCount : '5');
-    return this.http.get(this.rawg_url + "games", {params}).pipe(
+  getGamesList(parameters?:any): Observable<Game[]> {
+    return this.http.get(this.rawg_url + "games", {params: parameters}).pipe(
       map(res => {
         if (Array.isArray(res['results'])) {
           return res['results'].map(item => {
