@@ -1,17 +1,18 @@
-<div (click)="getDetails()" class="bg-primary text-alt rounded-lg overflow-hidden pb-0 m-8 max-w-sm">
+<div (click)="getDetails()" class="flex flex-col max-w-sm lg:max-w-md h-full bg-primary rounded overflow-hidden">
   <img [defaultImage]="defaultImage" [lazyLoad]="game.backgroundImage" alt="game image"
     class="h-64 w-full object-center object-cover" />
   <div class="px-2 py-1">
-    <h4 class="font-semibold text-lg">{{ game.name }}</h4>
+    <h4 class="font-semibold text-lg text-alt">{{ game.name }}</h4>
     <div class="flex flex-wrap justify-between">
-      <span class="flex mr-1">
+      <span class="flex mr-1 text-alt">
         <img *ngFor="let rating of ratingArray" src="../../../assets/star.jpg" alt="rating star" class="h-6" />
         ({{ game.rating }})</span>
-      <span *ngIf="game.metacritic" class="flex justify-between border-green-500 border-solid border-2 text-green-500 px-1">
+      <span *ngIf="game.metacritic"
+        class="flex justify-between border-green-500 border-solid border-2 text-green-500 px-1">
         <!-- <img src="../../../assets/metacritic.png" alt="metacritic logo" class="h-6 mr-1" /> -->
         {{ game.metacritic }}</span>
     </div>
-    <div class="flex flex-wrap items-end justify-start">
+    <div class="flex flex-wrap items-baseline justify-start">
       <span *ngFor="let genre of game.genres"
         class="bg-gray-500 rounded-full px-2 py-1 mr-1 mt-1 text-alt capitalize font-medium text-xs tracking-wider hover:bg-secondary">
         {{ genre.name }}

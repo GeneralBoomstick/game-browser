@@ -16,7 +16,7 @@ export class GameListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.gameInfoService.getGamesList({ordering: '-rating', exclude_additions: true, page_size: 10}).subscribe(res => {
+    this.gameInfoService.getGamesList({exclude_additions: true, page_size: 20}).subscribe(res => {
       this.games = res;
     });
   }
