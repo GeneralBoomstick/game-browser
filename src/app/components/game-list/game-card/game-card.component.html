@@ -8,7 +8,7 @@
         <img *ngFor="let rating of ratingArray" src="../../../assets/star.jpg" alt="rating star" class="h-6" />
         ({{ game.rating }})</span>
       <span *ngIf="game.metacritic"
-        class="flex justify-between border-green-500 border-solid border-2 text-green-500 px-1">
+        class="flex justify-between border-green-500 border-solid border-2 rounded-full text-green-500 px-1">
         <!-- <img src="../../../assets/metacritic.png" alt="metacritic logo" class="h-6 mr-1" /> -->
         {{ game.metacritic }}</span>
     </div>
